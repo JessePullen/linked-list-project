@@ -94,7 +94,19 @@ test('Check if it contains a value returning true or false if not', () => {
 
 	expect(list.contains('test')).toBe(false);
 
+	list.append(5);
 	list.append('test');
 
 	expect(list.contains('test')).toBe(true);
+});
+
+test('Finds the first index of a given value or return -1', () => {
+	const list = new LinkedList();
+
+	expect(list.findIndex('test')).toBe(-1);
+
+	list.append(5);
+	list.append('test');
+
+	expect(list.findIndex('test')).toBe(1);
 });

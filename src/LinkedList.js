@@ -94,4 +94,17 @@ export default class LinkedList {
 		}
 		return false;
 	}
+	// findIndex(value) Finds the first index of a given value or return -1
+	findIndex(value) {
+		let count = 0;
+		let current = this.headNode;
+		while (current !== null) {
+			if (current.value === value) {
+				return count;
+			}
+			count++;
+			current = current.nextNode;
+		}
+		return -1;
+	}
 }
