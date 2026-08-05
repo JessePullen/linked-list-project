@@ -1,17 +1,17 @@
 import Node from './Node.js';
 
 export default class LinkedList {
-	constructor(head = null) {
-		this.head = head;
+	constructor(headNode = null) {
+		this.headNode = headNode;
 	}
 	append(value) {
 		let node = new Node(value);
 
 		// If list empty, add node
-		if (this.head === null) {
-			this.head = node;
+		if (this.headNode === null) {
+			this.headNode = node;
 		} else {
-			let current = this.head;
+			let current = this.headNode;
 
 			// Traverse list
 			while (current !== null) {
@@ -26,22 +26,28 @@ export default class LinkedList {
 	}
 	prepend(value) {
 		let node = new Node(value);
-		if (this.head === null) {
-			this.head = node;
+		if (this.headNode === null) {
+			this.headNode = node;
 		} else {
 			// New node points to old head
-			node.nextNode = this.head;
+			node.nextNode = this.headNode;
 			// Head points to new node
-			this.head = node;
+			this.headNode = node;
 		}
 	}
 	size() {
 		let count = 0;
-		let current = this.head;
+		let current = this.headNode;
 		while (current !== null) {
 			count++;
 			current = current.nextNode;
 		}
 		return count;
+	}
+	head() {
+		if (this.headNode === null) {
+			return undefined;
+		}
+		return this.headNode.value;
 	}
 }
