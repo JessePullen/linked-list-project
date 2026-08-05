@@ -1,5 +1,3 @@
-import Node from './Node.js';
+import LinkedList from './LinkedList.js';
 
-const node = new Node();
-
-console.log(node);
+const list = new LinkedList();
