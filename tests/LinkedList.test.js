@@ -3,7 +3,7 @@ import LinkedList from '../src/LinkedList';
 test('A new list should have no head', () => {
 	const list = new LinkedList();
 
-	expect(list.headNode).toBe(null);
+	expect(list.headNode).toBeNull();
 });
 
 test('Append adds a value to empty list and should add to head with correct value', () => {
@@ -47,7 +47,7 @@ test('Size returns number of nodes', () => {
 test('Head returns value of head node or undefined', () => {
 	const list = new LinkedList();
 
-	expect(list.head()).toBe(undefined);
+	expect(list.head()).toBeUndefined();
 
 	list.append(1);
 	list.append(2);
@@ -58,7 +58,7 @@ test('Head returns value of head node or undefined', () => {
 test('Tail returns value of last node or undefined', () => {
 	const list = new LinkedList();
 
-	expect(list.tail()).toBe(undefined);
+	expect(list.tail()).toBeUndefined();
 
 	list.append(1);
 	list.append(2);
@@ -69,7 +69,7 @@ test('Tail returns value of last node or undefined', () => {
 test('Return value at given index or return undefined', () => {
 	const list = new LinkedList();
 
-	expect(list.at(0)).toBe(undefined);
+	expect(list.at(0)).toBeUndefined();
 
 	list.append(1);
 	list.append(2);
@@ -80,7 +80,7 @@ test('Return value at given index or return undefined', () => {
 test('Pop removes the head and returns its value or return undefined', () => {
 	const list = new LinkedList();
 
-	expect(list.pop()).toBe(undefined);
+	expect(list.pop()).toBeUndefined();
 
 	list.append(1);
 	list.append(2);
@@ -92,12 +92,12 @@ test('Pop removes the head and returns its value or return undefined', () => {
 test('Check if it contains a value returning true or false if not', () => {
 	const list = new LinkedList();
 
-	expect(list.contains('test')).toBe(false);
+	expect(list.contains('test')).toBeFalsy();
 
 	list.append(5);
 	list.append('test');
 
-	expect(list.contains('test')).toBe(true);
+	expect(list.contains('test')).toBeTruthy();
 });
 
 test('Finds the first index of a given value or return -1', () => {
