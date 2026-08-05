@@ -15,12 +15,24 @@ export default class LinkedList {
 
 			// Traverse list
 			while (current !== null) {
+				// End of list - append new node
 				if (current.nextNode === null) {
 					current.nextNode = node;
 					break;
 				}
 				current = current.nextNode;
 			}
+		}
+	}
+	prepend(value) {
+		let node = new Node(value);
+		if (this.head === null) {
+			this.head = node;
+		} else {
+			// New node points to old head
+			node.nextNode = this.head;
+			// Head points to new node
+			this.head = node;
 		}
 	}
 }

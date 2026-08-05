@@ -16,5 +16,13 @@ test('Append adds a value to list and should add to end with correct value', () 
 	list.append(5);
 	list.append(6);
 	list.append(7);
-	expect(list.head.nextNode.value).toBe(7);
+	expect(list.head.nextNode.nextNode.value).toBe(7);
+});
+
+test('Prepend adds value to start of list and should shift other values down', () => {
+	const list = new LinkedList();
+	list.append(5);
+	list.append(6);
+	list.prepend(0);
+	expect(list.head.value).toBe(0);
 });
