@@ -5,13 +5,13 @@ test('A new list should have no head', () => {
 	expect(list.head).toBe(null);
 });
 
-test('Add value to empty list should add to head and correct value', () => {
+test('Append adds a value to empty list and should add to head with correct value', () => {
 	const list = new LinkedList();
 	list.append(5);
 	expect(list.head.value).toBe(5);
 });
 
-test('Adding value to list should add to end and correct value', () => {
+test('Append adds a value to list and should add to end with correct value', () => {
 	const list = new LinkedList();
 	list.append(5);
 	list.append(6);
