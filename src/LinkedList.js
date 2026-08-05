@@ -107,4 +107,18 @@ export default class LinkedList {
 		}
 		return -1;
 	}
+	// toString() represents your LinkedList objects as strings, so you can print them out and preview them in the console. If the list is empty, it should return an empty string. The format should be: ( value ) -> ( value ) -> ( value ) -> null.
+	toString() {
+		if (this.headNode === null) {
+			return '';
+		}
+		let string = '';
+		let current = this.headNode;
+		while (current !== null) {
+			string += `( ${current.value} ) -> `;
+			current = current.nextNode;
+		}
+		string += 'null';
+		return string;
+	}
 }

@@ -110,3 +110,14 @@ test('Finds the first index of a given value or return -1', () => {
 
 	expect(list.findIndex('test')).toBe(1);
 });
+
+test('Converts value to string for ease of printing. Return empty string on empty list', () => {
+	const list = new LinkedList();
+
+	expect(list.toString()).toBe('');
+
+	list.append(1);
+	list.append(2);
+
+	expect(list.toString()).toBe('( 1 ) -> ( 2 ) -> null');
+});
