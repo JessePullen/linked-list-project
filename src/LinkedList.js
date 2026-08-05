@@ -50,4 +50,16 @@ export default class LinkedList {
 		}
 		return this.headNode.value;
 	}
+	tail() {
+		if (this.headNode === null) {
+			return undefined;
+		}
+		let current = this.headNode;
+		while (current !== null) {
+			current = current.nextNode;
+			if (current.nextNode === null) {
+				return current.value;
+			}
+		}
+	}
 }

@@ -42,6 +42,17 @@ test('Head returns value of head node or undefined', () => {
 	expect(list.head()).toBe(undefined);
 
 	list.append(1);
+	list.append(2);
 
 	expect(list.head()).toBe(1);
+});
+
+test('Tail returns value of last node or undefined', () => {
+	const list = new LinkedList();
+	expect(list.tail()).toBe(undefined);
+
+	list.append(1);
+	list.append(2);
+
+	expect(list.tail()).toBe(2);
 });
