@@ -88,3 +88,13 @@ test('Pop removes the head and returns its value or return undefined', () => {
 	expect(list.pop()).toBe(1);
 	expect(list.head()).toBe(2);
 });
+
+test('Check if it contains a value returning true or false if not', () => {
+	const list = new LinkedList();
+
+	expect(list.contains('test')).toBe(false);
+
+	list.append('test');
+
+	expect(list.contains('test')).toBe(true);
+});
