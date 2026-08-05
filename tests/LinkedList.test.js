@@ -26,3 +26,13 @@ test('Prepend adds value to start of list and should shift other values down', (
 	list.prepend(0);
 	expect(list.head.value).toBe(0);
 });
+
+test("Size returns number of nodes", () => {
+  const list = new LinkedList();
+
+  list.append(1);
+  list.append(2);
+  list.append(3);
+
+  expect(list.size()).toBe(3);
+});
