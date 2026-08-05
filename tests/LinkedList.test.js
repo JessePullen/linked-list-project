@@ -56,3 +56,13 @@ test('Tail returns value of last node or undefined', () => {
 
 	expect(list.tail()).toBe(2);
 });
+
+test('Return value at given index or return undefined', () => {
+	const list = new LinkedList();
+	expect(list.at(0)).toBe(undefined);
+
+	list.append(1);
+	list.append(2);
+
+	expect(list.at(1)).toBe(2);
+});

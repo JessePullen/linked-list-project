@@ -62,4 +62,17 @@ export default class LinkedList {
 			}
 		}
 	}
+	at(index) {
+		let count = 0;
+		let current = this.headNode;
+		// Count while traversing list to know where index is
+		while (current !== null) {
+			if (index === count) {
+				return current.value;
+			}
+			current = current.nextNode;
+			count++;
+		}
+		return undefined;
+	}
 }
