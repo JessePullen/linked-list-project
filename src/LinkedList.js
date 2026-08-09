@@ -142,7 +142,7 @@ export default class LinkedList {
 		} else {
 			// Finds index for insertion
 			for (let i = 1; i < index; i++) {
-				current = current.nextNode; // Turtle at index 2
+				current = current.nextNode;
 			}
 		}
 
