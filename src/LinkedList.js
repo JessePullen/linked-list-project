@@ -107,7 +107,6 @@ export default class LinkedList {
 		}
 		return -1;
 	}
-	// toString() represents your LinkedList objects as strings, so you can print them out and preview them in the console. If the list is empty, it should return an empty string. The format should be: ( value ) -> ( value ) -> ( value ) -> null.
 	toString() {
 		if (this.headNode === null) {
 			return '';
@@ -120,5 +119,39 @@ export default class LinkedList {
 		}
 		string += 'null';
 		return string;
+	}
+	insertAt(index, ...values) {
+		if (index > this.size() || index < 0) {
+			throw new RangeError('Index out of bounds');
+		}
+
+		let current = this.headNode;
+		let nextNode = null;
+
+		if (this.headNode !== null && index !== this.size()) {
+			nextNode = current.nextNode;
+		}
+
+		// Sets head to new node first of values, then removes first value to not duplicate in insertion loop
+		if (index === 0) {
+			nextNode = current;
+			let node = new Node(values[0]);
+			this.headNode = node;
+			current = node;
+			values = values.slice(1);
+		} else {
+			// Finds index for insertion
+			for (let i = 1; i < index; i++) {
+				current = current.nextNode; // Turtle at index 2
+			}
+		}
+
+		for (const value of values) {
+			let node = new Node(value);
+			current.nextNode = node;
+			current = node;
+		}
+		// Adds remainder of list to end of insertion
+		current.nextNode = nextNode;
 	}
 }

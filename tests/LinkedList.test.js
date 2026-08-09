@@ -121,3 +121,21 @@ test('Converts value to string for ease of printing. Return empty string on empt
 
 	expect(list.toString()).toBe('( 1 ) -> ( 2 ) -> null');
 });
+
+test('Inserting at an index and giving a group of values should insert at the given index (index begins at 1)', () => {
+	const list = new LinkedList();
+
+	list.append(1);
+	list.append(2);
+	list.append(3);
+	list.insertAt(1, 10, 11);
+
+	expect(list.toString()).toBe('( 1 ) -> ( 10 ) -> ( 11 ) -> ( 2 ) -> ( 3 ) -> null');
+});
+
+test('Inserting values outside of range throws error', () => {
+	const list = new LinkedList();
+
+	// Anonymous function lets function run before checking for error toThrow
+	expect(() => list.insertAt(2, 'test')).toThrow(RangeError);
+});
