@@ -154,4 +154,26 @@ export default class LinkedList {
 		// Adds remainder of list to end of insertion
 		current.nextNode = nextNode;
 	}
+	removeAt(index) {
+		if (index >= this.size() || index < 0) {
+			throw new RangeError('Index out of bounds');
+		}
+
+		if (index === 0) {
+			this.headNode = this.headNode.nextNode;
+			return;
+		}
+
+		let current = this.headNode;
+		let nextNode = null;
+		let previous = null;
+
+		for (let i = 0; i < index; i++) {
+			previous = current;
+			current = current.nextNode;
+		}
+
+		nextNode = current.nextNode;
+		previous.nextNode = nextNode;
+	}
 }

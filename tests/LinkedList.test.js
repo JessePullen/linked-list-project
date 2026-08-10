@@ -139,3 +139,21 @@ test('Inserting values outside of range throws error', () => {
 	// Anonymous function lets function run before checking for error toThrow
 	expect(() => list.insertAt(2, 'test')).toThrow(RangeError);
 });
+
+test('Removing at an index removes the node and connects the previous and next nodes', () => {
+	const list = new LinkedList();
+
+	list.append(1);
+	list.append(2);
+	list.append(3);
+	list.removeAt(1);
+
+	expect(list.toString()).toBe('( 1 ) -> ( 3 ) -> null');
+});
+
+test('Removing values outside of range throws error', () => {
+	const list = new LinkedList();
+
+	// Anonymous function lets function run before checking for error toThrow
+	expect(() => list.removeAt(2)).toThrow(RangeError);
+});
